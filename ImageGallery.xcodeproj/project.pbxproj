@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC9D1BF027D906E100F2C5AC /* InitialDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9D1BEF27D906E100F2C5AC /* InitialDict.swift */; };
 		ECEF896327D6241A008CC011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF896227D6241A008CC011 /* AppDelegate.swift */; };
 		ECEF896527D6241A008CC011 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF896427D6241A008CC011 /* SceneDelegate.swift */; };
 		ECEF896A27D6241A008CC011 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECEF896827D6241A008CC011 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC9D1BEF27D906E100F2C5AC /* InitialDict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialDict.swift; sourceTree = "<group>"; };
 		ECEF895F27D6241A008CC011 /* ImageGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECEF896227D6241A008CC011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECEF896427D6241A008CC011 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				ECEF89D727D63AB3008CC011 /* ImageCollectionViewCell.swift */,
 				ECEF89E127D7896C008CC011 /* ScrollViewController.swift */,
 				ECEF899427D6312E008CC011 /* Utilities.swift */,
+				EC9D1BEF27D906E100F2C5AC /* InitialDict.swift */,
 				ECEF896B27D6241F008CC011 /* Assets.xcassets */,
 				ECEF899627D63134008CC011 /* SupportFiles */,
 				ECEF897027D6241F008CC011 /* Info.plist */,
@@ -280,6 +283,7 @@
 			files = (
 				ECEF89D827D63AB3008CC011 /* ImageCollectionViewCell.swift in Sources */,
 				ECEF896327D6241A008CC011 /* AppDelegate.swift in Sources */,
+				EC9D1BF027D906E100F2C5AC /* InitialDict.swift in Sources */,
 				ECEF896527D6241A008CC011 /* SceneDelegate.swift in Sources */,
 				ECEF89E227D7896C008CC011 /* ScrollViewController.swift in Sources */,
 				ECEF899527D6312E008CC011 /* Utilities.swift in Sources */,

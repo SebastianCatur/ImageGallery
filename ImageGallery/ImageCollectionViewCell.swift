@@ -16,6 +16,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     func fetchImageFromUrl(urlString: String) {
         imageFetcher = ImageFetcher() { (url, image) in
             DispatchQueue.main.async {
+
                 self.imageView.image = image
                 self.spinner.stopAnimating()
                 self.spinner.isHidden = true

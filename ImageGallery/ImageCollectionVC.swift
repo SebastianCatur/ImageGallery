@@ -19,12 +19,18 @@ class ImageCollectionVC: UIViewController, UICollectionViewDelegate, UICollectio
     }
 
     var imageListUrls = [String]()
+    var keyToModify = ""
     private var imageForZoom = ""
+    var themesDefaults = [[String:[String]]]()
+    var  array = UserDefaults.standard.array(forKey: "themesArrayOfDict") as? [[String:[String]]]
+    var imageFethcer: ImageFetcher!
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if let array = array {
+            themesDefaults = array
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -42,7 +48,7 @@ class ImageCollectionVC: UIViewController, UICollectionViewDelegate, UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath)
         if let imageCell = cell as? ImageCollectionViewCell {
-            imageCell.fetchImageFromUrl(urlString: imageListUrls[indexPath.row])
+            imageCell.fetchImageFromUrl(urlString: imageListUrls[indexPath.item])
         }
         return cell
     }
@@ -100,7 +106,7 @@ class ImageCollectionVC: UIViewController, UICollectionViewDelegate, UICollectio
                         imageListUrls.insert(imageInfo, at: destinationIndexPath.item)
                         collectionView.deleteItems(at: [sourceIndexPath])
                         collectionView.insertItems(at: [destinationIndexPath])
-                        print("11")
+                        self.updateDict()
                     }
                     coordinator.drop(item.dragItem, toItemAt: destinationIndexPath)
                 }
@@ -111,19 +117,30 @@ class ImageCollectionVC: UIViewController, UICollectionViewDelegate, UICollectio
                     DispatchQueue.main.async {
                         if let url = provider as? URL {
                             imageUrlLocal = url.imageURL
-                            print("22")
                         }
 
                         if imageUrlLocal != nil {
                             placeholderContext.commitInsertion(dataSourceUpdates: { insertionIndexPath in
                                 self.imageListUrls.insert(imageUrlLocal.absoluteString, at: insertionIndexPath.item)
-                                print("33")
+                                self.updateDict()
+                                placeholderContext.setNeedsCellUpdate()
                             })
                         } else {
                             placeholderContext.deletePlaceholder()
-                            print("44")
                         }
                     }
+                }
+            }
+        }
+    }
+
+    func updateDict() {
+        for index in themesDefaults.indices {
+            let dict = themesDefaults[index]
+            for (key, _) in dict {
+                if key == keyToModify {
+                    themesDefaults[index].updateValue(imageListUrls, forKey: key)
+                    UserDefaults.standard.set(themesDefaults, forKey: "themesArrayOfDict")
                 }
             }
         }

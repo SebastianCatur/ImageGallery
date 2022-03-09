@@ -32,7 +32,13 @@
                             <outlet property="delegate" destination="7dd-Ui-cJm" id="LO4-Ma-zMI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="7uG-Io-cJ8"/>
+                    <navigationItem key="navigationItem" id="7uG-Io-cJ8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7uq-Ll-Y5L">
+                            <connections>
+                                <action selector="addTheme:" destination="7dd-Ui-cJm" id="twp-JZ-FSv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="Slz-Cw-gg4" kind="showDetail" identifier="ShowImages" id="bvZ-EA-NZA"/>
                     </connections>
@@ -49,10 +55,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="873.5" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dZP-Or-uyL">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZP-Or-uyL">
                                 <rect key="frame" x="0.0" y="74" width="873.5" height="740"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DRc-JX-vc1">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1JJ-dL-AMh">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -60,21 +66,21 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="LcK-vf-Fzm" customClass="ImageCollectionViewCell" customModule="ImageGallery" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6X4-SE-e7h">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jAp-5x-f3Q">
-                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="jAp-5x-f3Q" secondAttribute="height" multiplier="1:1" id="U5T-2h-I37"/>
                                                         <constraint firstAttribute="height" constant="150" id="i4S-2R-zAb"/>
                                                     </constraints>
                                                 </imageView>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="6Fd-L1-wm6">
-                                                    <rect key="frame" x="65" y="65" width="20" height="20"/>
+                                                    <rect key="frame" x="54" y="54" width="20" height="20"/>
                                                 </activityIndicatorView>
                                             </subviews>
                                             <constraints>
@@ -92,7 +98,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DropPlaceholderCell" id="9Md-zx-CR5">
-                                        <rect key="frame" x="160" y="11" width="128" height="128"/>
+                                        <rect key="frame" x="149" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hYw-xv-fyM">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -121,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lMI-f2-Knb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="98" y="1399"/>
+            <point key="canvasLocation" x="102" y="1419"/>
         </scene>
         <!--Scroll View Controller-->
         <scene sceneID="4Ea-Fv-htm">
@@ -185,17 +191,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPe-h5-QIM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="763" y="1399"/>
+            <point key="canvasLocation" x="751" y="1419"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="wPX-xG-1hn">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BUA-XN-9VU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <splitViewController allowDoubleColumnStyle="YES" id="zJ5-60-xZo" sceneMemberID="viewController">
                     <connections>
                         <segue destination="Zc5-jE-3NT" kind="relationship" relationship="masterViewController" id="kec-gn-lsi"/>
                     </connections>
                 </splitViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BUA-XN-9VU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-626" y="968"/>
         </scene>
