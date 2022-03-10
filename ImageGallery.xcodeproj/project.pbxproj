@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC586C5B27DA60AD001E789D /* SelectImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC586C5A27DA60AD001E789D /* SelectImageTableViewCell.swift */; };
 		EC9D1BF027D906E100F2C5AC /* InitialDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9D1BEF27D906E100F2C5AC /* InitialDict.swift */; };
 		ECEF896327D6241A008CC011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF896227D6241A008CC011 /* AppDelegate.swift */; };
 		ECEF896527D6241A008CC011 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF896427D6241A008CC011 /* SceneDelegate.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC586C5A27DA60AD001E789D /* SelectImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageTableViewCell.swift; sourceTree = "<group>"; };
 		EC9D1BEF27D906E100F2C5AC /* InitialDict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialDict.swift; sourceTree = "<group>"; };
 		ECEF895F27D6241A008CC011 /* ImageGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECEF896227D6241A008CC011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			children = (
 				ECEF896827D6241A008CC011 /* Main.storyboard */,
 				ECEF89D327D637D8008CC011 /* SelectImageTypeTableViewController.swift */,
+				EC586C5A27DA60AD001E789D /* SelectImageTableViewCell.swift */,
 				ECEF89D927D643AA008CC011 /* ImageCollectionVC.swift */,
 				ECEF89D727D63AB3008CC011 /* ImageCollectionViewCell.swift */,
 				ECEF89E127D7896C008CC011 /* ScrollViewController.swift */,
@@ -286,6 +289,7 @@
 				EC9D1BF027D906E100F2C5AC /* InitialDict.swift in Sources */,
 				ECEF896527D6241A008CC011 /* SceneDelegate.swift in Sources */,
 				ECEF89E227D7896C008CC011 /* ScrollViewController.swift in Sources */,
+				EC586C5B27DA60AD001E789D /* SelectImageTableViewCell.swift in Sources */,
 				ECEF899527D6312E008CC011 /* Utilities.swift in Sources */,
 				ECEF89DA27D643AA008CC011 /* ImageCollectionVC.swift in Sources */,
 				ECEF89D427D637D8008CC011 /* SelectImageTypeTableViewController.swift in Sources */,

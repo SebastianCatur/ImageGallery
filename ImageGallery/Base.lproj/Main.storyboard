@@ -18,13 +18,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThemeTableViewCell" id="0QB-jQ-ijA">
-                                <rect key="frame" x="0.0" y="44.5" width="420" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelectImageTableViewCell" id="0QB-jQ-ijA" customClass="SelectImageTableViewCell" customModule="ImageGallery" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="420" height="40.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0QB-jQ-ijA" id="nsU-U6-HDE">
-                                    <rect key="frame" x="100" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="100" y="0.0" width="320" height="40.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucE-sP-N6j">
+                                            <rect key="frame" x="0.0" y="0.0" width="420" height="40.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Of6-Jo-lnl"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DAR-U8-SzS">
+                                            <rect key="frame" x="0.0" y="0.0" width="420" height="40.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="0QB-jQ-ijA" id="tx7-Bz-WbH"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="DAR-U8-SzS" firstAttribute="bottom" secondItem="ucE-sP-N6j" secondAttribute="bottom" id="ASu-aW-eZI"/>
+                                        <constraint firstAttribute="bottom" secondItem="ucE-sP-N6j" secondAttribute="bottom" id="GW4-d2-kYL"/>
+                                        <constraint firstAttribute="trailing" secondItem="ucE-sP-N6j" secondAttribute="trailing" id="IoW-eE-5Hi"/>
+                                        <constraint firstItem="ucE-sP-N6j" firstAttribute="leading" secondItem="nsU-U6-HDE" secondAttribute="leading" id="LR0-5n-tHU"/>
+                                        <constraint firstItem="DAR-U8-SzS" firstAttribute="trailing" secondItem="ucE-sP-N6j" secondAttribute="trailing" id="Nmw-6K-wX9"/>
+                                        <constraint firstItem="DAR-U8-SzS" firstAttribute="leading" secondItem="ucE-sP-N6j" secondAttribute="leading" id="gAp-J3-4Fn"/>
+                                        <constraint firstItem="DAR-U8-SzS" firstAttribute="top" secondItem="ucE-sP-N6j" secondAttribute="top" id="kpk-Xt-UpD"/>
+                                        <constraint firstItem="ucE-sP-N6j" firstAttribute="top" secondItem="nsU-U6-HDE" secondAttribute="top" id="wjb-VE-y9f"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="tabelLabel" destination="ucE-sP-N6j" id="7Ft-kH-NSt"/>
+                                    <outlet property="textField" destination="DAR-U8-SzS" id="mXw-Hr-cBz"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -45,7 +78,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Kj-dE-vfA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="751" y="652"/>
+            <point key="canvasLocation" x="750.7537688442211" y="651.79856115107918"/>
         </scene>
         <!--Image CollectionVC-->
         <scene sceneID="SZs-f5-UBl">
@@ -74,10 +107,6 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jAp-5x-f3Q">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="jAp-5x-f3Q" secondAttribute="height" multiplier="1:1" id="U5T-2h-I37"/>
-                                                        <constraint firstAttribute="height" constant="150" id="i4S-2R-zAb"/>
-                                                    </constraints>
                                                 </imageView>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="6Fd-L1-wm6">
                                                     <rect key="frame" x="54" y="54" width="20" height="20"/>
@@ -117,9 +146,7 @@
                             <constraint firstItem="dZP-Or-uyL" firstAttribute="bottom" secondItem="PsM-bT-iN8" secondAttribute="bottom" id="s3t-nF-R8p"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="X9d-Jr-x6W">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="UEf-WT-9Co"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="X9d-Jr-x6W"/>
                     <connections>
                         <outlet property="imagesCollectionView" destination="dZP-Or-uyL" id="YPu-Xd-dan"/>
                         <segue destination="mtW-02-KlY" kind="showDetail" identifier="ImageZoom" id="Zr8-bD-7LY"/>
@@ -196,12 +223,12 @@
         <!--Split View Controller-->
         <scene sceneID="wPX-xG-1hn">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BUA-XN-9VU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <splitViewController allowDoubleColumnStyle="YES" id="zJ5-60-xZo" sceneMemberID="viewController">
                     <connections>
                         <segue destination="Zc5-jE-3NT" kind="relationship" relationship="masterViewController" id="kec-gn-lsi"/>
                     </connections>
                 </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BUA-XN-9VU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-626" y="968"/>
         </scene>

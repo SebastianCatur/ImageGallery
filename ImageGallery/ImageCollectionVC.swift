@@ -140,6 +140,7 @@ class ImageCollectionVC: UIViewController, UICollectionViewDelegate, UICollectio
             for (key, _) in dict {
                 if key == keyToModify {
                     themesDefaults[index].updateValue(imageListUrls, forKey: key)
+                    UserDefaults.standard.removeObject(forKey: "themesArrayOfDict")
                     UserDefaults.standard.set(themesDefaults, forKey: "themesArrayOfDict")
                 }
             }
